@@ -8,6 +8,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    protected $table = 'user';
+    public $timestamp = false;
     use Notifiable;
 
     /**
@@ -16,16 +18,24 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'u_id', 
+        'u_nama_lengkap', 
+        'u_password',
+        'u_kontak',
+        'u_alamat',
+        'u_active',
+        'u_dibuat_oleh',
+        'u_dibuat_pada',
+        'u_diubah_oleh',
+        'u_diubah_pada',
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'u_password',
     ];
 
     /**
